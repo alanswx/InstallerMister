@@ -39,6 +39,15 @@ def parseLinks(string):
   #print(result)
   return result
 
+def checkgithublinks(link):
+   path = os.path.normpath(link)
+   parts=path.split(os.sep)
+   print(parts)
+   if (parts[4]=='blob'):
+     print(link)
+     link=link.replace('blob','raw')
+     print(link)
+   return link
 
 #
 #  download the newest markdown from:
@@ -115,6 +124,7 @@ def checkAndDownloadFile(path,filebundles):
        print("* already exists: "+ fullpath)
     else:
        print("download: "+filelink+" to: "+fullpath)
+       filelink=checkgithublinks(filelink)
        urlretrieve (filelink,fullpath)
 
 def checkAndCreateFolder(path,directoryname):
