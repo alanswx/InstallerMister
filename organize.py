@@ -40,6 +40,13 @@ def parseLinks(string):
   return result
 
 
+#
+#  download the newest markdown from:
+#    https://raw.githubusercontent.com/wiki/alanswx/InstallerMister/Home.md
+#
+urlretrieve ("https://raw.githubusercontent.com/wiki/alanswx/InstallerMister/Home.md","misterinstaller.md")
+
+
 mytable=[]
 renderer = CSVRenderer()
 markdown = mistune.Markdown(renderer=renderer)
