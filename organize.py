@@ -110,6 +110,8 @@ print(newtable)
 # walk our table, and check to see if we have each core installed
 
 misterpath="misterinst"
+if not os.path.isdir(misterpath):
+   os.mkdir(misterpath)
 
 
 def checkAndDownloadFile(path,filebundles):
